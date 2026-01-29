@@ -8,6 +8,8 @@ class Person:
 
 
 def create_person_list(people: list) -> list:
+    Person.people.clear()
+
     person_list = [Person(data["name"], data["age"]) for data in people]
 
     for person_data in people:
@@ -20,3 +22,4 @@ def create_person_list(people: list) -> list:
             person.husband = Person.people[person_data["husband"]]
 
     return person_list
+
